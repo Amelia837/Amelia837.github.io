@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的摄影画廊</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-3d"></div>
+
+    <div class="container">
+        <header class="header">
+            <div class="title-box">
+                <h1><i class="fas fa-camera-retro"></i> 我的摄影画廊</h1>
+                <p class="subtitle">Amelia</p>
+            </div>
+
+            <div class="stats-box">
+                <div class="stat-item">
+                    <i class="fas fa-images"></i>
+                    <span class="stat-value">9</span>
+                    <span>张照片</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-file-image"></i>
+                    <span class="stat-value">0</span>
+                    <span>JPG</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-file-image"></i>
+                    <span class="stat-value">9</span>
+                    <span>PNG</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-hdd"></i>
+                    <span class="stat-value">242.2</span>
+                    <span>MB</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="view-controls">
+                <button id="view-grid" class="btn active"><i class="fas fa-th"></i> 网格视图</button>
+                <button id="view-slideshow" class="btn"><i class="fas fa-play"></i> 幻灯片</button>
+            </div>
+        </div>
+
+        <div class="gallery-container" id="grid-view">
+            <!-- 照片网格会通过JS动态生成 -->
+        </div>
+
+        <div class="slideshow-container" id="slideshow-view" style="display: none;">
+            <div class="slideshow-wrapper">
+                <div class="slide-nav left-nav">
+                    <button id="prev-slide" class="slide-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+
+                <div class="slide-viewport">
+                    <div class="slides" id="slides-container"></div>
+                </div>
+
+                <div class="slide-nav right-nav">
+                    <button id="next-slide" class="slide-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="slide-controls">
+                <div class="slide-counter">
+                    第 <span id="current-slide">1</span> 张 / 共 <span id="total-slides">9</span> 张
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>📷 专业摄影画廊 · 生成于 2026-02-05 15:59</p>
+        </footer>
+    </div>
+
+    <!-- 大图查看模态框 -->
+    <div class="modal" id="image-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-image-container">
+                <img id="modal-image" src="" alt="">
+            </div>
+            <div class="modal-nav">
+                <button id="modal-prev" class="modal-nav-btn">
+                    <i class="fas fa-chevron-left"></i> 上一张
+                </button>
+                <div class="modal-counter">
+                    <span id="modal-current">1</span> / <span id="modal-total">9</span>
+                </div>
+                <button id="modal-next" class="modal-nav-btn">
+                    下一张 <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
